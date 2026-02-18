@@ -1,0 +1,26 @@
+{
+
+    "CRUNCH": {
+        
+        "SystemName": "Crunch",
+        "SheetClassCharacter": "Character",
+
+        "System": {
+            "LevelShort": "Lvl",
+            "lvlComp1": "Beginner",
+            "lvlComp2": "Experienced",
+            "lvlComp3": "Competent",
+            "lvlComp4": "Old",
+            "lvlComp5": "Ancient",
+            "lvlComp6": "Godlike",
+            "Exp": "Experience",
+            "charProg": "Character Progression",
+            "addEvent": "Add Event",
+            "atriProg": "Attribute Progression",
+            "bodySkill": "Body Skills",
+            "mindSkill": "Mind Skills",
+            "sociSkill": "Social Skills",
+            "specSkill": "Special Skills"
+        }
+    }
+}

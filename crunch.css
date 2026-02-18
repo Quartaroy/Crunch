@@ -1,0 +1,534 @@
+.crunch.sheet.characterSheet .sheet {
+  width: 580px;
+  height: 580px;
+}
+.crunch.sheet.characterSheet .sheet2 {
+  width: 480px;
+  height: 480px;
+}
+.crunch.sheet.characterSheet .headerBox {
+  float: left;
+  width: 100%;
+  height: 600px;
+}
+.crunch.sheet.characterSheet .logoBox {
+  float: left;
+  height: 100%;
+  width: 190px;
+  position: relative;
+}
+.crunch.sheet.characterSheet .logoImg {
+  height: 89%;
+  width: 38%;
+  margin-left: 55px;
+  background-image: url(assets/img/netherguardLogo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: invert(1);
+}
+.crunch.sheet.characterSheet .logoText {
+  position: absolute;
+  top: 22px;
+  left: -23px;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
+}
+.crunch.sheet.characterSheet .imgBox {
+  float: left;
+  width: 135px;
+  height: 175px;
+  position: relative;
+  margin-left: 8px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  border: 3px #e99d76 solid;
+}
+.crunch.sheet.characterSheet .charImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.crunch.sheet.characterSheet .imgOverlay {
+  width: 135px;
+  height: 210px;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background-image: url(assets/img/imageBorder.png);
+  pointer-events: none;
+}
+.crunch.sheet.characterSheet .menuBox {
+  float: left;
+  width: 400px;
+  height: 26px;
+  position: relative;
+}
+.crunch.sheet.characterSheet .menuBG {
+  position: absolute;
+  width: 435px;
+  height: 21px;
+  border-image: url(assets/img/BannerTop.png);
+  border-image-slice: 2 2 fill;
+  border-left-width: 4px;
+  border-right-width: 4px;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-style: solid;
+  z-index: 5;
+  top: 3px;
+}
+.crunch.sheet.characterSheet .menuLbl {
+  width: 120px;
+  height: 21px;
+  position: absolute;
+  padding-left: 12px;
+  padding-top: 5px;
+  z-index: 8;
+  font-size: 12px;
+}
+.crunch.sheet.characterSheet .menuIcon {
+  width: 35px;
+  height: 35px;
+  padding-top: 7px;
+  position: absolute;
+  z-index: 8;
+  font-size: 16px;
+  background-image: url(assets/img/OneValueBorderFilled.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -2px;
+  text-align: center;
+  line-height: 0;
+}
+.crunch.sheet.characterSheet .menuSetup {
+  width: 35px;
+  height: 35px;
+  padding-top: 7px;
+  position: absolute;
+  z-index: 8;
+  font-size: 16px;
+  top: -2px;
+  text-align: center;
+  line-height: 0;
+}
+.crunch.sheet.characterSheet .menuTabs {
+  border: 0px;
+}
+.crunch.sheet.characterSheet .charInfoBox {
+  float: right;
+  width: 69%;
+  height: 100%;
+  padding-top: 8px;
+  padding-left: 5px;
+}
+.crunch.sheet.characterSheet .bigInputText {
+  width: 340px;
+  height: 32px;
+  font-size: 21px;
+}
+.crunch.sheet.characterSheet .lvlBox {
+  float: right;
+  width: 52px;
+  height: 70px;
+  background-image: url(assets/img/LvlValueBorder.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.crunch.sheet.characterSheet .lvlLable {
+  float: left;
+  width: 45px;
+  height: 25px;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 10px;
+}
+.crunch.sheet.characterSheet .lvlValue {
+  float: left;
+  width: 30px;
+  height: 27px;
+  padding-top: 2px;
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.crunch.sheet.characterSheet .charClass {
+  float: right;
+  width: 368px;
+  height: 34px;
+  margin-top: 4px;
+}
+.crunch.sheet.characterSheet .sideBarBox {
+  float: left;
+  width: 185px;
+  min-height: 500px;
+  border-image: url(assets/img/banner.png);
+  border-image-slice: 21 18 52 fill;
+  border-left-width: 18px;
+  border-right-width: 18px;
+  border-top-width: 21px;
+  border-bottom-width: 52px;
+  border-style: solid;
+  margin-top: 3px;
+}
+.crunch.sheet.characterSheet .charReaSpeed {
+  float: left;
+  height: 25px;
+  width: 100%;
+  margin-top: 160px;
+  padding-left: 1px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+}
+.crunch.sheet.characterSheet .charRes1 {
+  float: left;
+  width: 50px;
+  height: 43px;
+  background-image: url(assets/img/OneValueBorder.png);
+  background-size: contain;
+  text-align: center;
+  padding-top: 2px;
+  line-height: 16px;
+}
+.crunch.sheet.characterSheet .charResFirst {
+  margin-right: 35px;
+}
+.crunch.sheet.characterSheet .charResMiddle {
+  margin-top: 44px;
+  margin-left: 40px;
+}
+.crunch.sheet.characterSheet .charResHead {
+  font-size: 11px;
+}
+.crunch.sheet.characterSheet .charResValue {
+  font-size: 21px;
+  font-weight: bold;
+}
+.crunch.sheet.characterSheet .sideBarFill1 {
+  float: left;
+  height: 65px;
+  width: 100%;
+}
+.crunch.sheet.characterSheet .sideBarFill2 {
+  float: left;
+  height: 20px;
+  width: 100%;
+}
+.crunch.sheet.characterSheet .sideBarFill3 {
+  float: left;
+  height: 5px;
+  width: 100%;
+}
+.crunch.sheet.characterSheet .ressBarBox {
+  float: left;
+  height: 40px;
+  width: 100%;
+}
+.crunch.sheet.characterSheet .ressBarHeader {
+  font-size: 16px;
+  margin-left: 5px;
+}
+.crunch.sheet.characterSheet .ressBar {
+  height: 13px;
+  width: 95%;
+  margin: 5px 5px 0px;
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+.crunch.sheet.characterSheet .ressBarBar {
+  height: 10px;
+  background-color: green;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+.crunch.sheet.characterSheet .ressBarValue {
+  width: 100%;
+  padding-right: 5px;
+  text-align: right;
+  font-size: 12px;
+}
+.crunch.sheet.characterSheet .ressBarHealth {
+  background-color: green;
+}
+.crunch.sheet.characterSheet .ressBarStamina {
+  background-color: yellow;
+}
+.crunch.sheet.characterSheet .ressBarMana {
+  background-color: blue;
+}
+.crunch.sheet.characterSheet .ressBarLuck {
+  background-color: silver;
+}
+.crunch.sheet.characterSheet .contentBox {
+  float: left;
+  width: 430px;
+  min-height: 500px;
+}
+.crunch.sheet.characterSheet .charSheetBox {
+  float: left;
+  width: 430px;
+  min-height: 50px;
+}
+.crunch.sheet.characterSheet .charStatfieldset {
+  float: left;
+  width: 205px;
+  height: 80px;
+  border: solid;
+  border-radius: 1em;
+  margin: 1em 5px 3px;
+  padding: 0 1em 1em;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.crunch.sheet.characterSheet .charStatlegend {
+  transform: translatey(-50%);
+  width: max-content;
+  padding: 0 0.15em;
+  font-size: 32px;
+}
+.crunch.sheet.characterSheet .charStatBox {
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding-top: 3px;
+  font-size: 16px;
+  background-image: url(assets/img/OneValueBorderFilled.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 22px;
+  color: white;
+  text-align: center;
+  line-height: 14px;
+}
+.crunch.sheet.characterSheet .subMain {
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 3px 0;
+  align-items: center;
+  font-size: 20px;
+}
+.crunch.sheet.characterSheet .menuhrbox {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.crunch.sheet.characterSheet .menuhr {
+  border: none;
+  border-top: 2px solid #cb0101;
+  border-bottom: 1px solid #d5412f;
+}
+.crunch.sheet.characterSheet .charinputfullbox {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.crunch.sheet.characterSheet .charinputhalfbox {
+  float: left;
+  width: 50%;
+  margin-bottom: 5px;
+}
+.crunch.sheet.characterSheet .charinputlbl {
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 8px;
+}
+.crunch.sheet.characterSheet .charinputbox {
+  padding-left: 5px;
+  padding-right: 8px;
+}
+.crunch.sheet.characterSheet .charinputhalf {
+  height: 24px;
+}
+.crunch.sheet.characterSheet .charinputfull {
+  min-height: 70px;
+  width: 100%;
+}
+.crunch.sheet.characterSheet .chartraitbox {
+  height: 130px;
+  width: 195px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 5px;
+  padding-right: 8px;
+}
+.crunch.sheet.characterSheet .charvirtubox {
+  width: 160px;
+  position: relative;
+  background-color: #d9850c;
+  border-style: dashed;
+  border-color: orange;
+  border-radius: 5px;
+  padding-left: 7px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.crunch.sheet.characterSheet .charflawbox {
+  width: 160px;
+  position: relative;
+  background-color: #0887b9;
+  border-style: dashed;
+  border-color: #10c2da;
+  border-radius: 5px;
+  padding-left: 7px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.crunch.sheet.characterSheet .traiticon {
+  position: static;
+  margin-right: 8px;
+}
+.crunch.sheet.characterSheet .charcombatstatbox {
+  width: 100%;
+  height: 70px;
+}
+.crunch.sheet.characterSheet .charcombatinnerstatbox {
+  width: 280px;
+  height: 60px;
+  position: relative;
+  margin: 0 auto;
+}
+.crunch.sheet.characterSheet .charcombatstat {
+  float: left;
+  width: 65px;
+  height: 65px;
+  padding-top: 3px;
+  font-size: 16px;
+  background-image: url(assets/img/OneValueBorderFilled.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  color: white;
+  text-align: center;
+  line-height: 10px;
+}
+.crunch.sheet.characterSheet .charcombatstatvalue {
+  position: absolute;
+  bottom: 21px;
+  left: 22px;
+  font-size: 21px;
+  font-weight: bold;
+}
+.crunch.sheet.characterSheet .charprogressbox {
+  float: left;
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.crunch.sheet.characterSheet .charprogresslbl {
+  float: left;
+  width: 100px;
+  padding-top: 2px;
+  padding-left: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.crunch.sheet.characterSheet .charprogressinput {
+  width: 70px;
+  height: 24px;
+  margin: 0px 4px;
+  text-align: right;
+}
+.crunch.sheet.characterSheet .charprogressbnt {
+  float: right;
+  width: 83px;
+  height: 24px;
+  margin-right: 15px;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+  border: 2px solid;
+  border-radius: 6px;
+  border-color: #e99d76;
+  background-color: #cc0001;
+}
+.crunch.sheet.characterSheet .charcompetence {
+  width: 90px;
+  position: relative;
+  background-color: #d81d15;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #f0a07b;
+  border-radius: 3px;
+  margin-left: 2px;
+  font-size: 12px;
+  padding-top: 1px;
+  padding-left: 4px;
+}
+.crunch.sheet.characterSheet .charprogressattbox {
+  float: left;
+}
+.crunch.sheet.characterSheet .charprogressattmenubox {
+  float: left;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.crunch.sheet.characterSheet .charprogressatttypebnt {
+  float: left;
+  width: 100px;
+  height: 24px;
+  margin-right: 5px;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+  border: 2px solid;
+  border-radius: 6px;
+  border-color: #e99d76;
+  background-color: #cc0001;
+}
+.crunch.sheet.characterSheet .charprogressatttable {
+  margin: 0;
+  margin-left: 5px;
+}
+.crunch.sheet.characterSheet .charprogressatttr {
+  height: 45px;
+}
+.crunch.sheet.characterSheet .charprogressatttrdiv {
+  height: 8px;
+}
+.crunch.sheet.characterSheet .charprogressattlbl {
+  width: 90px;
+  padding: 0;
+  padding-left: 10px;
+}
+.crunch.sheet.characterSheet .charprogressattstatvalue {
+  width: 35px;
+  padding: 2px;
+  text-align: center;
+}
+.crunch.sheet.characterSheet .charprogressattdivider1 {
+  width: 25px;
+  padding: 0px;
+  text-align: center;
+}
+.crunch.sheet.characterSheet .charprogressattinput {
+  width: 35px;
+  height: 25px;
+}
+.crunch.sheet.characterSheet .charprogressincreasbnt {
+  float: right;
+  width: 25px;
+  height: 24px;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+  border: 2px solid;
+  border-radius: 13px;
+  border-color: #e99d76;
+  background-color: #cc0001;
+}
+.crunch.sheet.characterSheet .charprogressattstatbnt {
+  width: 35px;
+  padding: 0px;
+}
+.crunch.sheet.characterSheet .charprogressattstatcost {
+  width: 55px;
+  padding: 0px;
+  text-align: center;
+}

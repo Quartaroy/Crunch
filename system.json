@@ -1,0 +1,39 @@
+{
+    "id": "crunch",
+    "title": "Crunch Core System",
+    "description": "The way TTRPGs should be made in the digital age",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Simple Fox",
+            "discord": "verysimplefox"
+        }
+    ],
+    "compatibility": {
+        "minimum": 13,
+        "verified": "13",
+        "maximum": 13
+    },
+    "esmodules": [
+        "crunch.js"
+    ],
+    "styles": [
+        "crunch.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "socket": false,
+    "grid": {
+      "distance": 1,
+      "units": "Meter",
+      "type": 0
+    },
+    "url": "https://github.com/Quartaroy/CrunchDigitalRPG",
+    "manifest": "https://github.com/Quartaroy/CrunchDigitalRPG/releases/latest/download/system.json",
+    "download": "https://github.com/Quartaroy/CrunchDigitalRPG/releases/download/v0.0.1/system.zip"
+}
