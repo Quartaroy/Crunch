@@ -1,0 +1,8 @@
+<div class="queue-container" style="position: relative; width: 100%; height: 100%;">
+    {{#each items}}
+    <div class="queue-item" style="left: {{this.cssLeft}};" data-id="{{this.id}}">
+        <img src="{{this.img}}" title="{{this.name}}" />
+        <span class="name-tag" style="font-size: 10px; color: #e99d76;">{{this.name}}</span>
+    </div>
+    {{/each}}
+</div>

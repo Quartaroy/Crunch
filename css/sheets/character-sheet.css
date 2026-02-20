@@ -1,0 +1,53 @@
+.crunch.sheet.characterSheet .sheet-body {
+    display: flex; /* Forces panels to be side-by-side */
+    flex-direction: row;
+    position: relative;
+    transition: all .04s ease-in-out;
+    height: 500px;
+    width: 100%;
+    gap: 0;
+}
+
+.crunch.sheet.characterSheet .panel-toggle {
+    position: absolute;
+    right: -25px;      /* Pulls the button outside the right border */
+    top: 50%;          /* Move to vertical center */
+    transform: translateY(-50%); /* Offset by its own height to be dead-center */
+    width: 25px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+    border: 1px solid #e99d76; /* Matches your theme orange */
+    border-left: none;         /* Makes it look like it's attached to the sheet */
+    border-radius: 0 5px 5px 0;
+    background: #222;
+    color: #e99d76;
+    cursor: pointer;
+}
+
+.crunch.sheet.characterSheet .panel-toggle:hover {
+    background: #333;
+    box-shadow: 0 0 5px #e99d76;
+}
+
+.crunch.sheet.characterSheet .leftPanel {
+    width: 350px;
+    flex: 0 0 350px;
+    border: 1px solid #196f77;
+}
+
+.crunch.sheet.characterSheet .centerPanel,
+.crunch.sheet.characterSheet .rightPanel {
+    width: 350px;
+    flex: 0 0 350px;
+}
+
+/* When collapsed, hide the extra panels */
+.crunch.sheet.characterSheet .sheet-body.collapsed .centerPanel,
+.crunch.sheet.characterSheet .sheet-body.collapsed .rightPanel {
+    width: 0;
+    flex: 0 0 0;
+    opacity: 0;
+    pointer-events: none;
+}

@@ -1,51 +1,64 @@
-import { CRUNCH } from "./modules/config.js";
-import crunchActor from "./modules/objects/CrunchActor.js";
-import crunchCharacterSheet from "./modules/sheets/crunchCharacterSheet.js";
+import { CRUNCH } from "./modules/config.mjs";
+import crunchActor from "./modules/objects/CrunchActor.mjs";
+import TimeQueue from "./modules/combat/timeQueue.mjs";
+// import crunchCharacterSheet from "./modules/sheets/crunchCharacterSheet.mjs";
 
 Hooks.once("init", async () => {
+    console.log("CRUNCH | Initializing Crunch Core System");
 
-    console.log("CRUNCH | Initalizing Crunch Core System");
-
-    // Setting up the Global Configuration Object
     CONFIG.CRUNCH = CRUNCH;
     CONFIG.INIT = true;
     CONFIG.Actor.documentClass = crunchActor;
 
-    // Register custom Sheets and unregister the start Sheets
-    // Items.unregisterSheet("core", ItemSheet);
-
-    foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-    foundry.documents.collections.Actors.registerSheet("crunch", crunchCharacterSheet, {
-        types: ["character"],
-        makeDefault: true
+    foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "crunch", crunchCharacterSheet, { 
+    types: ["character"], 
+    makeDefault: true,
     });
 
-    // Load all Partial-Handlebar Files
     preloadHandlebarsTemplates();
-
-    // Register Additional Handelbar Helpers
     registerHandlebarsHelpers();  
+
+    game.settings.register("crunch", "timeQueue", {
+        name: "Time Queue",
+        hint: "Internal storage for time queue actors",
+        scope: "world",      
+        config: false,       
+        type: Array,
+        default: [],
+        onChange: () => {
+        const app = game.system.timeQueue;
+        if (app && app.rendered) app.render();
+}
+    })
 });
 
 Hooks.once("ready", async () => {
-
-    // Finished Initalization Phase and release lock
     CONFIG.INIT = false;
 
-    // Only execute when run as Gamemaster
-    if(!game.user.isGM) return;   
+    game.system.timeQueue = new TimeQueue();
+    game.system.timeQueue.render();
+
+    if(!game.user.isGM) return;
+});
+
+
+Hooks.on("createCombatant", (combatant) => {
+    if (game.user.isGM && combatant.actor) TimeQueue.addActor(combatant.actor);
+});
+
+Hooks.on("deleteCombatant", async (combatant) => {
+    if (!game.user.isGM) return;
+    const queue = game.settings.get("crunch", "timeQueue") || [];
+    const newQueue = queue.filter(item => item.uuid !== combatant.actor?.uuid);
+    await game.settings.set("crunch", "timeQueue", newQueue);
 });
 
 function preloadHandlebarsTemplates() {
 
     const templatePaths = [
 
-        "systems/crunch/templates/partials/character-sheet-character.hbs",
-        "systems/crunch/templates/partials/character-sheet-background.hbs",
-        "systems/crunch/templates/partials/character-sheet-skill.hbs",
-        "systems/crunch/templates/partials/character-sheet-combat.hbs",
-        "systems/crunch/templates/partials/character-sheet-progression.hbs",
-
+        "systems/crunch/templates/sheets/character/character-sheet.hbs",
     ];
     
     return foundry.applications.handlebars.loadTemplates(templatePaths);
@@ -61,11 +74,17 @@ function registerHandlebarsHelpers() {
 
     Handlebars.registerHelper("isEqualORGreater", function(p1, p2) { return (p1 >= p2)});
 
+    Handlebars.registerHelper("ifElse", function(condition, val1, val2) { return condition ? val1 : val2; });
+
     Handlebars.registerHelper("ifOR", function(conditional1, conditional2) { return (conditional1 || conditional2)});
 
     Handlebars.registerHelper("doLog", function(value) { console.log(value)});
 
     Handlebars.registerHelper("toBoolean", function(string) { return (string === "true")});
+
+    Handlebars.registerHelper("if", function(condition, val1, val2) {
+        return condition ? val1 : (typeof val2 === 'string' ? val2 : "");
+    });
 
     Handlebars.registerHelper('for', function(from, to, incr, content) {
 

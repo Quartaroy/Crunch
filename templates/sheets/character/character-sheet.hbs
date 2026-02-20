@@ -1,0 +1,14 @@
+<div class="sheet-body {{if panelsCollapsed 'collapsed' ''}}">
+    
+    <div class="leftPanel">
+        <label>Reaction Speed</label>
+        <input type="number" name="system.reactionSpeed" value="{{system.reactionSpeed}}" data-dtype="Number"/>
+    </div>
+    
+    <div class="centerPanel"></div>
+    <div class="rightPanel"></div>
+
+    <button type="button" class="panel-toggle" data-action="togglePanels">
+        <i class="fas {{if panelsCollapsed 'fa-chevron-right' 'fa-chevron-left'}}"></i>
+    </button>
+</div>
