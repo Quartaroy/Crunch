@@ -1,3 +1,5 @@
+import TimeQueue from "../combat/timeQueue.mjs";
+
 export default class crunchCharacterSheet extends foundry.applications.api.HandlebarsApplicationMixin(
     foundry.applications.sheets.ActorSheetV2
 ) {
@@ -20,6 +22,12 @@ export default class crunchCharacterSheet extends foundry.applications.api.Handl
                 const newWidth = this.panelsCollapsed ? 385 : 1100;
                 this.setPosition({ width: newWidth });
                 this.render();
+            },
+            takeAction: async function(event, target) {
+                const cost = parseInt(target.dataset.cost);
+                const actorUuid = this.actor.uuid;
+                
+                await TimeQueue.advanceQueue(actorUuid, cost);
             }
         }
     }
@@ -37,13 +45,17 @@ export default class crunchCharacterSheet extends foundry.applications.api.Handl
 
         super._configureRenderOptions(options);
 
-        if (this.document.limited) options.parts = ["sheet-body"]
+        if (this.document.limited) options.parts = ["sheetBody"]
     }
     
     /** @override */
     async _prepareContext(options) {
         const context = await super._prepareContext(options);
+        
+        context.actor = this.actor;
+        context.system = this.actor.system;
         context.panelsCollapsed = this.panelsCollapsed;
+        
         return context;
     }
     

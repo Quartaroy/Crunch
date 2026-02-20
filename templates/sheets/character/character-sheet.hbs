@@ -1,14 +1,19 @@
-<div class="sheet-body {{if panelsCollapsed 'collapsed' ''}}">
+<div class="sheet-body {{#if panelsCollapsed}}collapsed{{/if}}">
     
     <div class="leftPanel">
         <label>Reaction Speed</label>
         <input type="number" name="system.reactionSpeed" value="{{system.reactionSpeed}}" data-dtype="Number"/>
+        <div class="action-controls" style="margin-top: 10px;">
+            <button type="button" data-action="takeAction" data-cost="15">
+                <i class="fas fa-clock"></i> Take Action (15)
+            </button>
+        </div>
     </div>
     
     <div class="centerPanel"></div>
     <div class="rightPanel"></div>
 
     <button type="button" class="panel-toggle" data-action="togglePanels">
-        <i class="fas {{if panelsCollapsed 'fa-chevron-right' 'fa-chevron-left'}}"></i>
+        <i class="fas {{ifElse panelsCollapsed 'fa-chevron-right' 'fa-chevron-left'}}"></i>
     </button>
 </div>

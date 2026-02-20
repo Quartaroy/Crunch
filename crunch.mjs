@@ -1,7 +1,7 @@
 import { CRUNCH } from "./modules/config.mjs";
 import crunchActor from "./modules/objects/CrunchActor.mjs";
 import TimeQueue from "./modules/combat/timeQueue.mjs";
-// import crunchCharacterSheet from "./modules/sheets/crunchCharacterSheet.mjs";
+import crunchCharacterSheet from "./modules/sheets/crunchCharacterSheet.mjs";
 
 Hooks.once("init", async () => {
     console.log("CRUNCH | Initializing Crunch Core System");
@@ -14,6 +14,7 @@ Hooks.once("init", async () => {
     foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, "crunch", crunchCharacterSheet, { 
     types: ["character"], 
     makeDefault: true,
+    label: "CRUNCH.SheetClassCharacter"
     });
 
     preloadHandlebarsTemplates();
@@ -37,11 +38,10 @@ Hooks.once("ready", async () => {
     CONFIG.INIT = false;
 
     game.system.timeQueue = new TimeQueue();
-    game.system.timeQueue.render();
+    game.system.timeQueue.render(true);
 
     if(!game.user.isGM) return;
 });
-
 
 Hooks.on("createCombatant", (combatant) => {
     if (game.user.isGM && combatant.actor) TimeQueue.addActor(combatant.actor);
@@ -59,6 +59,7 @@ function preloadHandlebarsTemplates() {
     const templatePaths = [
 
         "systems/crunch/templates/sheets/character/character-sheet.hbs",
+        "systems/crunch/templates/time-queue.hbs"
     ];
     
     return foundry.applications.handlebars.loadTemplates(templatePaths);
@@ -81,10 +82,6 @@ function registerHandlebarsHelpers() {
     Handlebars.registerHelper("doLog", function(value) { console.log(value)});
 
     Handlebars.registerHelper("toBoolean", function(string) { return (string === "true")});
-
-    Handlebars.registerHelper("if", function(condition, val1, val2) {
-        return condition ? val1 : (typeof val2 === 'string' ? val2 : "");
-    });
 
     Handlebars.registerHelper('for', function(from, to, incr, content) {
 
